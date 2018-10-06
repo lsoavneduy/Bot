@@ -72,4 +72,4 @@ client.on('guildMemberAdd', member => {
     client.channels.get("486519816752988161").send(member.toString() + "You Can Enter (GetPermission) To Get The Permission In This Channel After 10mins :3");
 });
 
-client.login(TOKEN);
+client.login(token);
