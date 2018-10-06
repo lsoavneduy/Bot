@@ -21,7 +21,7 @@ client.on("message", (message) => {
         message.channel.send("Hello :3");
     }
 
-    if (message.content.startsWith("Fuck")) {
+    if (message.content.startsWith("Fuck") || message.content.startsWith("fuck")) {
         message.channel.send("Fuck You Too");
     }
 
