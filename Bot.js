@@ -68,8 +68,8 @@ client.on("message", (message) => {
 });
 
 client.on('guildMemberAdd', member => {
-    client.channels.get("485479920487628810").send("Welcome" + member.toString() + "To This Discord Server :3");
-    client.channels.get("486519816752988161").send(member.toString() + "You Can Enter (GetPermission) To Get The Permission In This Channel After 10mins :3");
+    client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
+    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (GetPermission) To Get The Permission In This Channel After 10mins :3");
 });
 
 client.login(token);
