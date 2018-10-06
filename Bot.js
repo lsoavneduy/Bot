@@ -1,5 +1,7 @@
 const discord = require('discord.js');
 const client = new discord.Client();
+const token = process.env.TOKEN;
+const prefix = process.env.PREFIX;
 
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
@@ -70,4 +72,4 @@ client.on('guildMemberAdd', member => {
     client.channels.get("486519816752988161").send(member.toString() + "You Can Enter (GetPermission) To Get The Permission In This Channel After 10mins :3");
 });
 
-client.login(process.env.TOKEN);
+client.login(TOKEN);
