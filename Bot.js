@@ -1,9 +1,8 @@
 const discord = require('discord.js');
 const client = new discord.Client();
-const { token, prefix } = require("./config.json");
 
-const fs = require("fs");
-client.msgs = require("./msgs.json");
+//const fs = require("fs");
+//client.msgs = require("./msgs.json");
 
 
 client.on("ready", () => {
@@ -74,4 +73,4 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.login(token);
+client.login(process.env.Token);
