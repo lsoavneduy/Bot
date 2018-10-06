@@ -1,6 +1,10 @@
 const discord = require('discord.js');
 const client = new discord.Client();
 
+const s3 = new aws.S3({
+    Token: process.env.Token
+})
+
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
 
@@ -73,4 +77,4 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.login(process.env.Token);
+client.login(Token);
