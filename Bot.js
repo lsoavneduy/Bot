@@ -30,7 +30,7 @@ client.on("message", (message) => {
     }
 
     if (message.content.startsWith("TsChFa")) {
-        message.channel.send(guild.member.user.get("206003875092627456") + "Just a totally rubbish :3");
+        message.channel.send(member.user.get("206003875092627456") + "Just a totally rubbish :3");
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
