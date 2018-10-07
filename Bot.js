@@ -30,7 +30,7 @@ client.on("message", (message) => {
     }
 
     if (message.content.startsWith("TsChFa")) {
-        message.author.id = "206003875092627456";
+        message.author.id = "312990661156667393";
         message.channel.send(message.author + " Just a totally rubbish :3");
     }
 
