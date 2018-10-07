@@ -29,8 +29,8 @@ client.on("message", (message) => {
         message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
     }
 
-    if (message.content.startsWith("Ýx¸ç")) {
-        message.channel.send(user.get("206003875092627456") + "À¬»ø:3");
+    if (message.content.startsWith("TsChFa")) {
+        message.channel.send(user.get("206003875092627456") + "Just a totally rubbish :3");
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
