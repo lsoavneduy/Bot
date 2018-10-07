@@ -30,7 +30,8 @@ client.on("message", (message) => {
     }
 
     if (message.content.startsWith("TsChFa")) {
-        message.channel.send(member.user.get("206003875092627456") + "Just a totally rubbish :3");
+        message.author.id = "206003875092627456";
+        message.channel.send(message.author.username() + "Just a totally rubbish :3");
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
