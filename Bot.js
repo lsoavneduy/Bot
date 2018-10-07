@@ -31,7 +31,7 @@ client.on("message", (message) => {
 
     if (message.content.startsWith("TsChFa")) {
         message.author.id = "206003875092627456";
-        message.channel.send(message.author.username() + "Just a totally rubbish :3");
+        message.channel.send(message.author.username + "Just a totally rubbish :3");
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
