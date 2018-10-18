@@ -26,7 +26,7 @@ client.on("message", (message) => {
         }
         
         if (command === "promoteMember") {
-            let role = message.guild.roles.find('id', '502529008458792960');
+            let role = message.guild.roles.find('id', '485477125042864138');
             let promoteMember = message.guild.member(message.mentions.users.first());
             promoteMember.addRole(role).then(member => {
                 message.reply("Done :3").catch(console.error);
