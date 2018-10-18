@@ -24,15 +24,15 @@ client.on("message", (message) => {
 
     if (message.content.startsWith(prefix)) {
 
-        if (newcommand === "help") {
+        if (newCommand === "help") {
             message.reply("Here Are The Command :3 \n !CNMB->help \n !CNMB->hello \n !CNMB->Rubbish @Username \n !CNMB->promoteExtra @Username \n !CNMB->promoteMember @Username");
         }
 
-        if (newcommand === "hello") {
+        if (newCommand === "hello") {
             message.reply("Hello :3");
         }
 
-        if (newcommand === "rubbish") {
+        if (newCommand === "rubbish") {
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
@@ -40,7 +40,7 @@ client.on("message", (message) => {
                 message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
         }
 
-        if (newcommand === "promotemxtra") {
+        if (newCommand === "promotemxtra") {
             let role = message.guild.roles.find('id', '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
@@ -48,7 +48,7 @@ client.on("message", (message) => {
             });
         }
 
-        if (newcommand === "promotemember") {
+        if (newCommand === "promotemember") {
             if (message.member.roles.find('id', '485478723840245761')) {
                 let role = message.guild.roles.find('id', '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
