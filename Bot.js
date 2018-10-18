@@ -8,44 +8,55 @@ const prefix = process.env.PREFIX;
 
 
 client.on("ready", () => {
-    console.log("I'm ready!");
+    console.log("Bot Working :D");
 
-    client.user.setGame("Developed By lsoavneduy :3");
+    client.user.setActivity("Developed By lsoavneduy :3");
 });
 
 client.on("message", (message) => {
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-    let args = message.content.split(" ").slice(1);
+    {
+        let command = message.content.split(" ")[0];
+        command = command.slice(prefix.length);
+        let args = message.content.split(" ").slice(1);
+    }
 
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
+
         if (command === "hello") {
             message.reply("Hello :3");
+        }
+
+        if (command === "promoteExtra") {
+            let role = message.guild.roles.find('id', '485478021327880232');
+            let target = message.guild.member(message.mentions.users.first());
+            target.addRole(role).then(member => {
+                message.reply("Done :3").catch(console.error);
+            });
         }
         
         if (command === "promoteMember") {
             let role = message.guild.roles.find('id', '485477125042864138');
-            let promoteMember = message.guild.member(message.mentions.users.first());
-            promoteMember.addRole(role).then(member => {
+            let target = message.guild.member(message.mentions.users.first());
+            target.addRole(role).then(member => {
                 message.reply("Done :3").catch(console.error);
             });
+        }
+
+        if (command === "Rubbish") {
+            let target = message.guild.member(message.mentions.users.first());
+            if (!(target === users.find('id', '206003875092627456')))
+                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
+            else 
+                message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
         }
     }
 
     else {
-        if (message.content.startsWith("Hello")) {
-            message.channel.send("Hello :3");
-        }
 
         if (message.content.startsWith("Fuck") || message.content.startsWith("fuck")) {
             message.channel.send("Fuck You Too");
-        }
-
-        if (message.content.startsWith("GetPermission")) {
-            message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
-            message.channel.send("Done :3");
         }
 
         if (message.content.startsWith("TsChFa")) {
@@ -53,7 +64,16 @@ client.on("message", (message) => {
             message.channel.send(message.author + " Just a totally rubbish :3");
         }
     }
+});
 
+client.on('guildMemberAdd', member => {
+    client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
+    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->GetExtra) To Get Your First Permission In This Channel After 10mins :3");
+});
+
+client.login(token);
+
+{
     //    if (message.content.startsWith(prefix + "JJ")) {
     //        message.channel.send({ files: [""] });
     //    }
@@ -88,13 +108,4 @@ client.on("message", (message) => {
             });
         }
     */
-
-
-});
-
-client.on('guildMemberAdd', member => {
-    client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
-    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (GetPermission) To Get The Permission In This Channel After 10mins :3");
-});
-
-client.login(token);
+}
