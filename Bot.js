@@ -17,21 +17,22 @@ client.on("message", (message) => {
 
     let command = message.content.split(" ")[0];
     command = command.slice(prefix.length);
+    newCommand = command.toLowerCase();
     let args = message.content.split(" ").slice(1);
 
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
 
-        if (command === "help") {
+        if (newcommand === "help") {
             message.reply("Here Are The Command :3 \n !CNMB->help \n !CNMB->hello \n !CNMB->Rubbish @Username \n !CNMB->promoteExtra @Username \n !CNMB->promoteMember @Username");
         }
 
-        if (command === "hello") {
+        if (newcommand === "hello") {
             message.reply("Hello :3");
         }
 
-        if (command === "Rubbish") {
+        if (newcommand === "rubbish") {
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
@@ -39,7 +40,7 @@ client.on("message", (message) => {
                 message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
         }
 
-        if (command === "promoteExtra") {
+        if (newcommand === "promotemxtra") {
             let role = message.guild.roles.find('id', '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
@@ -47,7 +48,7 @@ client.on("message", (message) => {
             });
         }
 
-        if (command === "promoteMember") {
+        if (newcommand === "promotemember") {
             if (message.member.roles.find('id', '485478723840245761')) {
                 let role = message.guild.roles.find('id', '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
