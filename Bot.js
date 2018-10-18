@@ -30,8 +30,7 @@ client.on("message", (message) => {
 
     if (message.content.startsWith("GetPermission")) {
         message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
-        if (message.member.roles.find('id', '485478021327880232'))
-            message.channel.send("Now you have the permrission :3");
+        message.channel.send("Now You Got The Permrission :3");
     }
 
     if (message.content.startsWith("TsChFa")) {
@@ -39,11 +38,11 @@ client.on("message", (message) => {
         message.channel.send(message.author + " Just a totally rubbish :3");
     }
 
-    if (command === "promote") {
+/*    if (command === "promote") {
         let member = message.mentions.members.first();
         member.addRole(message.guild.roles.find('id', '502386713092423680'));
     }
-
+*/
     //    if (message.content.startsWith(prefix + "JJ")) {
     //        message.channel.send({ files: [""] });
     //    }
