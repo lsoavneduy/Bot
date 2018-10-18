@@ -24,7 +24,7 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix)) {
 
         if (command === "hello") {
-            message.reply("Hello :3");
+            message.reply("Hello :3").catch(console.error);
         }
 
         if (command === "promoteExtra") {
@@ -34,13 +34,18 @@ client.on("message", (message) => {
                 message.reply("Done :3").catch(console.error);
             });
         }
-        
+
         if (command === "promoteMember") {
-            let role = message.guild.roles.find('id', '485477125042864138');
-            let target = message.guild.member(message.mentions.users.first());
-            target.addRole(role).then(member => {
-                message.reply("Done :3").catch(console.error);
-            });
+            if (message.member.roles.find('id', '485478723840245761')) {
+                let role = message.guild.roles.find('id', '485477125042864138');
+                let target = message.guild.member(message.mentions.users.first());
+                target.addRole(role).then(member => {
+                    message.reply("Done :3").catch(console.error);
+                });
+            }
+            else {
+                message.reply("So Sad~~ You Don't Have Permission To Do That~~").catch(console.error);
+            }
         }
 
         if (command === "Rubbish") {
@@ -49,18 +54,6 @@ client.on("message", (message) => {
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
             else 
                 message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
-        }
-    }
-
-    else {
-
-        if (message.content.startsWith("Fuck") || message.content.startsWith("fuck")) {
-            message.channel.send("Fuck You Too");
-        }
-
-        if (message.content.startsWith("TsChFa")) {
-            message.author.id = "312990661156667393";
-            message.channel.send(message.author + " Just a totally rubbish :3");
         }
     }
 });
