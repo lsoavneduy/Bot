@@ -21,6 +21,10 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
+        if (command === "hello") {
+            message.reply("Hello :3");
+        }
+        
         if (command === "promoteMember") {
             let role = message.guild.roles.find('id', '502529008458792960');
             let promoteMember = message.guild.member(message.mentions.users.first());
