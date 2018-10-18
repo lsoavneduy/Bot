@@ -23,8 +23,25 @@ client.on("message", (message) => {
 
     if (message.content.startsWith(prefix)) {
 
+        if (command === "help") {
+            message.channel.send("Here Are The Command :3");
+            message.channel.send("!CNMB->help");
+            message.channel.send("!CNMB->hello");
+            message.channel.send("!CNMB->Rubbish (@Username)");
+            message.channel.send("!CNMB->promoteExtra (@Username)");
+            message.channel.send("!CNMB->promoteMember (@Username)");
+        }
+
         if (command === "hello") {
-            message.reply("Hello :3").catch(console.error);
+            message.reply("Hello :3");
+        }
+
+        if (command === "Rubbish") {
+            let target = message.guild.member(message.mentions.users.first());
+            if (target.id === '206003875092627456')
+                message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
+            else
+                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
         }
 
         if (command === "promoteExtra") {
@@ -46,14 +63,6 @@ client.on("message", (message) => {
             else {
                 message.reply("You Don't Have Permission To Do That :3").catch(console.error);
             }
-        }
-
-        if (command === "Rubbish") {
-            let target = message.guild.member(message.mentions.users.first());
-            if (target.id === '206003875092627456')
-                message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
-            else 
-                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
         }
     }
 });
