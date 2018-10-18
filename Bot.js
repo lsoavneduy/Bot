@@ -2,6 +2,8 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
+const args = message.content.slice(prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
 
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
@@ -27,11 +29,18 @@ client.on("message", (message) => {
 
     if (message.content.startsWith("GetPermission")) {
         message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
+        if (message.member.roles.find('id', '485478021327880232'))
+            message.channel.send("Now you have the permrission :3");
     }
 
     if (message.content.startsWith("TsChFa")) {
         message.author.id = "312990661156667393";
         message.channel.send(message.author + " Just a totally rubbish :3");
+    }
+
+    if (command === "promote") {
+        let member = message.mentions.members.first();
+        member.addRole(message.guild.roles.find('id', '502386713092423680'));
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
