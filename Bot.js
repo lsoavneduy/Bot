@@ -24,12 +24,7 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix)) {
 
         if (command === "help") {
-            message.channel.send("Here Are The Command :3");
-            message.channel.send("!CNMB->help");
-            message.channel.send("!CNMB->hello");
-            message.channel.send("!CNMB->Rubbish (@Username)");
-            message.channel.send("!CNMB->promoteExtra (@Username)");
-            message.channel.send("!CNMB->promoteMember (@Username)");
+            message.reply("Here Are The Command :3 \n !CNMB->help \n !CNMB->hello \n !CNMB->Rubbish @Username \n !CNMB->promoteExtra @Username \n !CNMB->promoteMember @Username");
         }
 
         if (command === "hello") {
