@@ -2,8 +2,7 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
+
 
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
@@ -16,6 +15,8 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
+    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
 
     if (message.author.bot) return;
 
