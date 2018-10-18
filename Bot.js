@@ -44,7 +44,7 @@ client.on("message", (message) => {
                 });
             }
             else {
-                message.reply("So Sad~~ You Don't Have Permission To Do That~~").catch(console.error);
+                message.reply("You Don't Have Permission To Do That :3").catch(console.error);
             }
         }
 
