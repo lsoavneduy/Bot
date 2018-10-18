@@ -14,24 +14,40 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+    let args = message.content.split(" ").slice(1);
 
     if (message.author.bot) return;
 
-    if (message.content.startsWith("Hello")) {
-        message.channel.send("Hello :3");
+    if (message.content.startsWith(prefix)) {
+        if (command === "promoteMember") {
+            let role = message.guild.roles.find('id', '502529008458792960');
+            let promoteMember = message.guild.member(message.mentions.users.first());
+            promoteMember.addRole(role).then(member => {
+                message.reply("Done :3");
+            });
+        }
     }
 
-    if (message.content.startsWith("Fuck") || message.content.startsWith("fuck")) {
-        message.channel.send("Fuck You Too");
-    }
+    else {
+        if (message.content.startsWith("Hello")) {
+            message.channel.send("Hello :3");
+        }
 
-    if (message.content.startsWith("GetPermission")) {
-        message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
-    }
+        if (message.content.startsWith("Fuck") || message.content.startsWith("fuck")) {
+            message.channel.send("Fuck You Too");
+        }
 
-    if (message.content.startsWith("TsChFa")) {
-        message.author.id = "312990661156667393";
-        message.channel.send(message.author + " Just a totally rubbish :3");
+        if (message.content.startsWith("GetPermission")) {
+            message.member.addRole(message.guild.roles.find('id', '485478021327880232'));
+            message.channel.send("Done :3");
+        }
+
+        if (message.content.startsWith("TsChFa")) {
+            message.author.id = "312990661156667393";
+            message.channel.send(message.author + " Just a totally rubbish :3");
+        }
     }
 
     //    if (message.content.startsWith(prefix + "JJ")) {
