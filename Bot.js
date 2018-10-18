@@ -25,7 +25,7 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix)) {
 
         if (newCommand === "help") {
-            message.reply("Here Are The Command :3 \n !CNMB->help \n !CNMB->hello \n !CNMB->Rubbish @Username \n !CNMB->promoteExtra @Username \n !CNMB->promoteMember @Username");
+            message.reply("Here Are The Command :3 \n !CNMB->Help \n !CNMB->Hello \n !CNMB->Rubbish @Username \n !CNMB->PromoteExtra @Username \n !CNMB->PromoteMember @Username");
         }
 
         if (newCommand === "hello") {
