@@ -46,10 +46,10 @@ client.on("message", (message) => {
 
         if (command === "Rubbish") {
             let target = message.guild.member(message.mentions.users.first());
-            if (!(target === users.find('id', '206003875092627456')))
-                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
-            else 
+            if (target === message.guild.member.find('id', '206003875092627456'))
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
+            else 
+                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
         }
     }
 
