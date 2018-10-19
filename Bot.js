@@ -61,44 +61,53 @@ client.on("message", (message) => {
             }
         }
 
-        if (newCommand === "rollrelic") {
+        if (newCommand === "rollegg") {
             let number = Math.floor(Math.random() * 99) + 1;
             if (number > 0 && number <= 50) {
-                message.reply("Common :3");
+                message.reply("SR :3");
             }
             if (number > 50 && number <= 90) {
-                message.reply("Uncommon :3");
+                message.reply("SR :3");
             }
-            if (number > 90 && number <= 100) {
-                message.reply("Rare :3");
+            if (number > 90 && number <= 99) {
+                message.reply("SSR :3");
+            }
+            if (number == 100) {
+                message.reply("UR :3");
             }
         }
 
-        if (newCommand === "rollrelic10") {
+        if (newCommand === "rollegg10") {
             var output;
             var i;
             for (i = 0; i < 10; i++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 50) {
                     if (output == null)
-                        output += "Common";
+                        output = "R";
                     else
-                        output += ", Common";
+                        output += ", R";
                 }
                 if (number > 50 && number <= 90) {
                     if (output == null)
-                        output += "Uncommon";
+                        output = "SR";
                     else
-                        output += ", Uncommon";
+                        output += ", SR";
                 }
-                if (number > 90 && number <= 100) {
+                if (number > 90 && number <= 98) {
                     if (output == null)
-                        output += "Rare";
+                        output = "SSR";
                     else
-                        output += ", Rare";
+                        output += ", SSR";
                 }
-                message.reply(output);
+                if (number > 98 && number <= 100) {
+                    if (output == null)
+                        output = "UR";
+                    else
+                        output += ", UR";
+                }
             }
+            message.reply(output);
         }
     }
 });
