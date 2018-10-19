@@ -63,13 +63,13 @@ client.on("message", (message) => {
 
         if (newCommand === "rollegg") {
             let number = Math.floor(Math.random() * 99) + 1;
-            if (number > 0 && number <= 50) {
+            if (number > 0 && number <= 94) {
                 message.reply("SR :3");
             }
-            if (number > 50 && number <= 90) {
+            if (number > 94 && number <= 97) {
                 message.reply("SR :3");
             }
-            if (number > 90 && number <= 99) {
+            if (number > 97 && number <= 99) {
                 message.reply("SSR :3");
             }
             if (number == 100) {
@@ -82,19 +82,19 @@ client.on("message", (message) => {
             var i;
             for (i = 0; i < 10; i++) {
                 let number = Math.floor(Math.random() * 99) + 1;
-                if (number > 0 && number <= 50) {
+                if (number > 0 && number <= 90) {
                     if (output == null)
                         output = "R";
                     else
                         output += ", R";
                 }
-                if (number > 50 && number <= 90) {
+                if (number > 90 && number <= 95) {
                     if (output == null)
                         output = "SR";
                     else
                         output += ", SR";
                 }
-                if (number > 90 && number <= 98) {
+                if (number > 95 && number <= 98) {
                     if (output == null)
                         output = "SSR";
                     else
