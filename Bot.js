@@ -67,12 +67,36 @@ client.on("message", (message) => {
                 message.reply("Common :3");
             }
             if (number > 50 && number <= 90) {
-                message.reply("Rare :3");
+                message.reply("Uncommon :3");
             }
             if (number > 90 && number <= 100) {
-                message.reply("Relic :3");
+                message.reply("Rare :3");
             }
-            
+        }
+
+        if (newCommand === "rollrelic10") {
+            for (i = 0; i < 10; i++) {
+                let number = Math.floor(Math.random() * 99) + 1;
+                if (number > 0 && number <= 50) {
+                    if (output == null)
+                        output += "Common";
+                    else
+                        output += ", Common";
+                }
+                if (number > 50 && number <= 90) {
+                    if (output == null)
+                        output += "Uncommon";
+                    else
+                        output += ", Uncommon";
+                }
+                if (number > 90 && number <= 100) {
+                    if (output == null)
+                        output += "Rare";
+                    else
+                        output += ", Rare";
+                }
+                message.reply(output);
+            }
         }
     }
 });
