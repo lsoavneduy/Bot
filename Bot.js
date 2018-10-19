@@ -64,7 +64,7 @@ client.on("message", (message) => {
         if (newCommand === "rollegg") {
             let number = Math.floor(Math.random() * 99) + 1;
             if (number > 0 && number <= 94) {
-                message.reply("SR :3");
+                message.reply("R :3");
             }
             if (number > 94 && number <= 97) {
                 message.reply("SR :3");
