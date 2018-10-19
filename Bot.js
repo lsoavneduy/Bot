@@ -60,6 +60,20 @@ client.on("message", (message) => {
                 message.reply("You Don't Have Permission To Do That :3").catch(console.error);
             }
         }
+
+        if (newCommand === "rollrelic") {
+            let number = Math.floor(Math.random() * 99) + 1;
+            if (number > 0 && number <= 50) {
+                message.reply("Common :3");
+            }
+            if (number > 50 && number <= 90) {
+                message.reply("Rare :3");
+            }
+            if (number > 90 && number <= 100) {
+                message.reply("Relic :3");
+            }
+            
+        }
     }
 });
 
