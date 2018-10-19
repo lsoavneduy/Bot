@@ -41,7 +41,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promotemxtra") {
-            let role = message.guild.roles.find('id', '485478021327880232');
+            let role = message.guild.roles.find(role=> role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
                 message.reply("Done :3").catch(console.error);
@@ -50,7 +50,7 @@ client.on("message", (message) => {
 
         if (newCommand === "promotemember") {
             if (message.member.roles.find('id', '485478723840245761')) {
-                let role = message.guild.roles.find('id', '485477125042864138');
+                let role = message.guild.roles.find(role=> role.id === '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
                 target.addRole(role).then(member => {
                     message.reply("Done :3").catch(console.error);
