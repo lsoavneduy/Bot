@@ -75,6 +75,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollrelic10") {
+            var output;
+            var i;
             for (i = 0; i < 10; i++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 50) {
