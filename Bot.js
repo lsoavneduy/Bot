@@ -41,7 +41,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promotemxtra") {
-            let role = message.guild.roles.find('id', '485478021327880232');
+            let role = message.guild.roles.find(role=> role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
                 message.reply("Done :3").catch(console.error);
@@ -50,7 +50,7 @@ client.on("message", (message) => {
 
         if (newCommand === "promotemember") {
             if (message.member.roles.find('id', '485478723840245761')) {
-                let role = message.guild.roles.find('id', '485477125042864138');
+                let role = message.guild.roles.find(role=> role.id === '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
                 target.addRole(role).then(member => {
                     message.reply("Done :3").catch(console.error);
@@ -59,6 +59,88 @@ client.on("message", (message) => {
             else {
                 message.reply("You Don't Have Permission To Do That :3").catch(console.error);
             }
+        }
+
+        if (newCommand === "rollegg") {
+            let number = Math.floor(Math.random() * 99) + 1;
+            if (number > 0 && number <= 94) {
+                message.reply("R :3");
+            }
+            if (number > 94 && number <= 97) {
+                message.reply("SR :3");
+            }
+            if (number > 97 && number <= 99) {
+                message.reply("SSR :3");
+            }
+            if (number == 100) {
+                message.reply("UR :3");
+            }
+        }
+
+        if (newCommand === "rollegg10") {
+            var output;
+            var i;
+            for (i = 0; i < 10; i++) {
+                let number = Math.floor(Math.random() * 99) + 1;
+                if (number > 0 && number <= 90) {
+                    if (output == null)
+                        output = "R";
+                    else
+                        output += ", R";
+                }
+                if (number > 90 && number <= 95) {
+                    if (output == null)
+                        output = "SR";
+                    else
+                        output += ", SR";
+                }
+                if (number > 95 && number <= 98) {
+                    if (output == null)
+                        output = "SSR";
+                    else
+                        output += ", SSR";
+                }
+                if (number > 98 && number <= 100) {
+                    if (output == null)
+                        output = "UR";
+                    else
+                        output += ", UR";
+                }
+            }
+            message.reply(output);
+        }
+
+        if (newCommand === "rollegg100") {
+            var output;
+            var i;
+            for (i = 0; i < 100; i++) {
+                let number = Math.floor(Math.random() * 99) + 1;
+                if (number > 0 && number <= 90) {
+                    if (output == null)
+                        output = "R";
+                    else
+                        output += ", R";
+                }
+                if (number > 90 && number <= 95) {
+                    if (output == null)
+                        output = "SR";
+                    else
+                        output += ", SR";
+                }
+                if (number > 95 && number <= 98) {
+                    if (output == null)
+                        output = "SSR";
+                    else
+                        output += ", SSR";
+                }
+                if (number > 98 && number <= 100) {
+                    if (output == null)
+                        output = "UR";
+                    else
+                        output += ", UR";
+                }
+            }
+            message.reply(output);
         }
     }
 });
