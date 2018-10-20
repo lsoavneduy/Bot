@@ -9,7 +9,7 @@ const prefix = process.env.PREFIX;
 
 client.on("ready", () => {
     console.log("Bot Working :D");
-    message.channel.get('id', '496677896426094593').send("Bot Working :D");
+    client.channel.get('id', '496677896426094593').send("Bot Working :D");
 
     client.user.setActivity("Developed By lsoavneduy :3");
 });
