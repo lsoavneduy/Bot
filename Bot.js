@@ -38,10 +38,11 @@ client.on("message", (message) => {
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
-            else 
-                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
             if (target.id === '150959015197802505')
                 message.channel.send("No! I disagree with you. " + target + " is very Cute :3");
+            else 
+                message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
+
         }
 
         if (newCommand === "promotemxtra") {
