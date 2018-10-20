@@ -34,7 +34,7 @@ client.on("message", (message) => {
 
         if (newCommand === "rubbish") {
             let target = message.guild.member(message.mentions.users.first());
-            if (target.id === '206003875092627456' && target.id === '150959015197802505')
+            if (target.id === '206003875092627456' || target.id === '150959015197802505')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
             else
                 message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
