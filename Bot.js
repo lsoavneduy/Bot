@@ -8,7 +8,7 @@ const prefix = process.env.PREFIX;
 
 
 client.on("ready", () => {
-    console.log("Bot Working :D");
+    console.log("[Log] Bot Working :D");
 
     client.channels.get("496677896426094593").send("Bot Working :D");
 
@@ -30,14 +30,17 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix)) {
 
         if (newCommand === "help") {
+            console.log("[Log] [Help]");
             message.reply("Here Are The Command :3 \n !CNMB->Help \n !CNMB->Hello \n !CNMB->Rubbish @Username \n !CNMB->PromoteExtra @Username \n !CNMB->PromoteMember @Username");
         }
 
         if (newCommand === "hello") {
+            console.log("[Log] [Hello]");
             message.reply("Hello :3");
         }
 
         if (newCommand === "rubbish") {
+            console.log("[Log] [Rubbish]");
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
@@ -48,7 +51,8 @@ client.on("message", (message) => {
 
         }
 
-        if (newCommand === "promotemxtra") {
+        if (newCommand === "promoteextra") {
+            console.log("[Log] [PromoteExtra]");
             let role = message.guild.roles.find(role=> role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
@@ -57,6 +61,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promotemember") {
+            console.log("[Log] [PromoteMember]");
             if (message.member.roles.find('id', '485478723840245761')) {
                 let role = message.guild.roles.find(role=> role.id === '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
@@ -70,6 +75,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg") {
+            console.log("[Log] [RollEgg]");
             let number = Math.floor(Math.random() * 99) + 1;
             if (number > 0 && number <= 94) {
                 message.reply("R :3");
@@ -86,6 +92,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg10") {
+            console.log("[Log] [RollEgg10]");
             for (i = 0; i < 10; i++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -117,6 +124,7 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg100") {
+            console.log("[Log] [RollEgg100]");
             for (i = 0; i < 100; i++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -148,8 +156,9 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg1000") {
-            for (i = 0; i < 2; i++) {
-                for (i = 0; i < 500; i++) {
+            console.log("[Log] [RollEgg1000]");
+            for (i = 0; i < 10; i++) {
+                for (i = 0; i < 100; i++) {
                     let number = Math.floor(Math.random() * 99) + 1;
                     if (number > 0 && number <= 90) {
                         if (output === null)
