@@ -10,7 +10,7 @@ const prefix = process.env.PREFIX;
 client.on("ready", () => {
     console.log("[Log] Bot Working :D");
 
-    client.channels.get("496677896426094593").send("Bot Working :D");
+    client.channels.get("503586373744459818").send("Bot Working :D");
 
     client.user.setActivity("Developed By lsoavneduy :3");
 });
