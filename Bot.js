@@ -158,8 +158,8 @@ client.on("message", (message) => {
 
         if (newCommand === "rollegg1000") {
             console.log("[Log] [RollEgg1000]");
-            for (b = 0; b < 10; b++) {
-                for (a = 0; a < 100; a++) {
+            for (b = 0; b < 4; b++) {
+                for (a = 0; a < 250; a++) {
                     let number = Math.floor(Math.random() * 99) + 1;
                     if (number > 0 && number <= 90) {
                         if (output === null)
