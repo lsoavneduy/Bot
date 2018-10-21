@@ -146,6 +146,76 @@ client.on("message", (message) => {
             }
             message.reply(output);
         }
+
+        if (newCommand === "rollegg1000") {
+            for (i = 0; i < 2; i++) {
+                for (i = 0; i < 500; i++) {
+                    let number = Math.floor(Math.random() * 99) + 1;
+                    if (number > 0 && number <= 90) {
+                        if (output === null)
+                            output = "R";
+                        else
+                            output += ", R";
+                    }
+                    if (number > 90 && number <= 95) {
+                        if (output === null)
+                            output = "SR";
+                        else
+                            output += ", SR";
+                    }
+                    if (number > 95 && number <= 98) {
+                        if (output === null)
+                            output = "SSR";
+                        else
+                            output += ", SSR";
+                    }
+                    if (number > 98 && number <= 100) {
+                        if (output === null)
+                            output = "UR";
+                        else
+                            output += ", UR";
+                    }
+                }
+                message.reply(output);
+                output = null;
+            }
+
+        }
+
+        if (newCommand === "rollegg10000") {
+            for (i = 0; i < 20; i++) {
+                for (i = 0; i < 500; i++) {
+                    let number = Math.floor(Math.random() * 99) + 1;
+                    if (number > 0 && number <= 90) {
+                        if (output === null)
+                            output = "R";
+                        else
+                            output += ", R";
+                    }
+                    if (number > 90 && number <= 95) {
+                        if (output === null)
+                            output = "SR";
+                        else
+                            output += ", SR";
+                    }
+                    if (number > 95 && number <= 98) {
+                        if (output === null)
+                            output = "SSR";
+                        else
+                            output += ", SSR";
+                    }
+                    if (number > 98 && number <= 100) {
+                        if (output === null)
+                            output = "UR";
+                        else
+                            output += ", UR";
+                    }
+                }
+                message.reply(output);
+                output = null;
+            }
+
+        }
     }
 });
 
