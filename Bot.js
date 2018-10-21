@@ -31,17 +31,20 @@ client.on("message", (message) => {
     if (message.content.startsWith(prefix)) {
 
         if (newCommand === "help") {
-            console.log("[Log] [Help] By" + message.author.username.toString());
+            console.log("[Log] [Help] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [Help] By " + message.author.username.toString());
             message.reply("Here Are The Command :3 \n !CNMB->Help \n !CNMB->Hello \n !CNMB->Rubbish @Username \n !CNMB->PromoteExtra @Username \n !CNMB->PromoteMember @Username \n !CNMB->RollEgg \n !CNMB->RollEgg10 \n !CNMB->RollEgg100 \n !CNMB->RollEgg1000");
         }
 
         if (newCommand === "hello") {
-            console.log("[Log] [Hello] By" + message.author.username.toString());
+            console.log("[Log] [Hello] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [Hello] By " + message.author.username.toString());
             message.reply("Hello :3");
         }
 
         if (newCommand === "rubbish") {
-            console.log("[Log] [Rubbish] By" + message.author.username.toString());
+            console.log("[Log] [Rubbish] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [Rubbish] By " + message.author.username.toString());
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
@@ -53,7 +56,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promoteextra") {
-            console.log("[Log] [PromoteExtra] By" + message.author.username.toString());
+            console.log("[Log] [PromoteExtra] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [PromoteExtra] By " + message.author.username.toString());
             let role = message.guild.roles.find(role=> role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
@@ -62,7 +66,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promotemember") {
-            console.log("[Log] [PromoteMember] By" + message.author.username.toString());
+            console.log("[Log] [PromoteMember] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [PromoteMember] By " + message.author.username.toString());
             if (message.member.roles.find('id', '485478723840245761')) {
                 let role = message.guild.roles.find(role=> role.id === '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
@@ -76,7 +81,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg") {
-            console.log("[Log] [RollEgg] By" + message.author.username.toString());
+            console.log("[Log] [RollEgg] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [RollEgg] By " + message.author.username.toString());
             let number = Math.floor(Math.random() * 99) + 1;
             if (number > 0 && number <= 94) {
                 message.reply("R :3");
@@ -93,7 +99,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg10") {
-            console.log("[Log] [RollEgg10] By" + message.author.username.toString());
+            console.log("[Log] [RollEgg10] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [RollEgg10] By " + message.author.username.toString());
             for (a = 0; a < 10; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -125,7 +132,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg100") {
-            console.log("[Log] [RollEgg100] By" + message.author.username.toString());
+            console.log("[Log] [RollEgg100] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [RollEgg100] By " + message.author.username.toString());
             for (a = 0; a < 100; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -157,7 +165,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg1000") {
-            console.log("[Log] [RollEgg1000] By" + message.author.username.toString());
+            console.log("[Log] [RollEgg1000] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send("[Log] [RollEgg1000] By " + message.author.username.toString());
             for (b = 0; b < 4; b++) {
                 for (a = 0; a < 250; a++) {
                     let number = Math.floor(Math.random() * 99) + 1;
