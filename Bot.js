@@ -23,7 +23,8 @@ client.on("message", (message) => {
     let args = message.content.split(" ").slice(1);
 
     var output = null;
-    var i = 0;
+    var a = 0
+    var b = 0;
 
     if (message.author.bot) return;
 
@@ -93,7 +94,7 @@ client.on("message", (message) => {
 
         if (newCommand === "rollegg10") {
             console.log("[Log] [RollEgg10]");
-            for (i = 0; i < 10; i++) {
+            for (a = 0; a < 10; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
                     if (output === null)
@@ -125,7 +126,7 @@ client.on("message", (message) => {
 
         if (newCommand === "rollegg100") {
             console.log("[Log] [RollEgg100]");
-            for (i = 0; i < 100; i++) {
+            for (a = 0; a < 100; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
                     if (output === null)
@@ -157,8 +158,8 @@ client.on("message", (message) => {
 
         if (newCommand === "rollegg1000") {
             console.log("[Log] [RollEgg1000]");
-            for (i = 0; i < 10; i++) {
-                for (i = 0; i < 100; i++) {
+            for (b = 0; b < 10; b++) {
+                for (a = 0; a < 100; a++) {
                     let number = Math.floor(Math.random() * 99) + 1;
                     if (number > 0 && number <= 90) {
                         if (output === null)
