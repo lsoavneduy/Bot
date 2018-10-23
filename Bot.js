@@ -209,14 +209,19 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
+
     let newMemberChannel = newMember.voiceChannel;
     let oldMemberChannel = oldMember.voiceChannel;
 
     if (oldMemberChannel === undefined && newUserChannel !== undefined) {
-        client.channels.get("504358200406048769").send(newMember.username + "Joined Voice Channel( " + newMemberChannel.name + " ) :3");
+        console.log("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        client.channels.get("503586373744459818").send("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        client.channels.get("504358200406048769").send(newMember.user.username + "Joined Voice Channel( " + newMemberChannel.name + " ) :3");
     }
-    else if (newMemberChannel === undefined) {
-        client.channels.get("504358200406048769").send(newMember.username + "Joined Voice Channel( " + oldMemberChannel.name + " ) :3");
+    else if (oldMemberChannel !== undefined && newMemberChannel === undefined) {
+        console.log("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        client.channels.get("503586373744459818").send("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
+        client.channels.get("504358200406048769").send(newMember.user.username + "Leave Voice Channel( " + oldMemberChannel.name + " ) :3");
     }
 });
 
