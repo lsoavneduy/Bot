@@ -218,12 +218,12 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     if (oldMemberChannel === undefined && newMemberChannel !== undefined) {
         console.log("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
         client.channels.get("503586373744459818").send("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
-        client.channels.get("504358200406048769").send(newMember.user.username + "Joined Voice Channel( " + newMemberChannel.name + " ) :3");
+        client.channels.get("504358200406048769").send(newMember.user.username + " Joined Voice Channel( " + newMemberChannel.name + " ) :3");
     }
     else if (oldMemberChannel !== undefined && newMemberChannel === undefined) {
         console.log("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("503586373744459818").send("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
-        client.channels.get("504358200406048769").send(newMember.user.username + "Leave Voice Channel( " + oldMemberChannel.name + " ) :3");
+        client.channels.get("504358200406048769").send(newMember.user.username + " Leave Voice Channel( " + oldMemberChannel.name + " ) :3");
     }
     else if (oldMemberChannel !== newMemberChannel) {
         console.log("[Log] [SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
