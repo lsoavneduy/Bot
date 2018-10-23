@@ -219,7 +219,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         client.channels.get("504358200406048769").send(newMember.user.username + "Joined Voice Channel( " + newMemberChannel.name + " ) :3");
     }
     else if (oldMemberChannel !== undefined && newMemberChannel === undefined) {
-        console.log("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        console.log("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("503586373744459818").send("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(newMember.user.username + "Leave Voice Channel( " + oldMemberChannel.name + " ) :3");
     }
