@@ -23,7 +23,7 @@ client.on("message", (message) => {
     let args = message.content.split(" ").slice(1);
 
     var output = null;
-    var a = 0
+    var a = 0;
     var b = 0;
 
     if (message.author.bot) return;
@@ -206,6 +206,18 @@ client.on("message", (message) => {
 client.on('guildMemberAdd', member => {
     client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
     client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->GetExtra) To Get Your First Permission In This Channel After 10mins :3");
+});
+
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+    let newMemberChannel = newMember.voiceChannel;
+    let oldMemberChannel = oldMember.voiceChannel;
+
+    if (oldMemberChannel === undefined && newUserChannel !== undefined) {
+        client.channels.get("504358200406048769").send(newMember.username + "Joined Voice Channel( " + newMemberChannel.name + " ) :3");
+    }
+    else if (newMemberChannel === undefined) {
+        client.channels.get("504358200406048769").send(newMember.username + "Joined Voice Channel( " + oldMemberChannel.name + " ) :3");
+    }
 });
 
 client.login(token);
