@@ -228,7 +228,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     else if (oldMemberChannel !== newMemberChannel) {
         console.log("[Log] [SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
         client.channels.get("503586373744459818").send("[Log] [SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
-        client.channels.get("504358200406048769").send(newMember.user.username + "Switch Voice Channel From ( " + oldMemberChannel.name + " ) To ( " + newMemberChannel.name + " ) : 3");
+        client.channels.get("504358200406048769").send(newMember.user.username + " Switch Voice Channel From ( " + oldMemberChannel.name + " ) To ( " + newMemberChannel.name + " ) : 3");
     }
 });
 
