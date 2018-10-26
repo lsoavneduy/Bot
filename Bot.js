@@ -49,8 +49,8 @@ client.on("message", (message) => {
 
         if (newCommand === "rubbish") {
             let target = message.guild.member(message.mentions.users.first());
-            console.log(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
-            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            console.log(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.user.username + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.user.username + "]");
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
             if (target.id === '150959015197802505')
@@ -63,8 +63,8 @@ client.on("message", (message) => {
         if (newCommand === "promoteextra") {
             let role = message.guild.roles.find(role => role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
-            console.log(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.member.username.toString() + "]");
-            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.member.username.toString() + "]");
+            console.log(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.user.username + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.user.username + "]");
 
             if (message.member.roles.find('id', '485478723840245761')) {
                 target.addRole(role).then(member => {
