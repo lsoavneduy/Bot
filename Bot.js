@@ -4,10 +4,10 @@ const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
 const log = {
-    d: Date(),
-    h: d.getHours(),
-    m: d.getMinutes(),
-    s: d.getSeconds(),
+    var d: Date(),
+    var h: d.getHours(),
+    var m: d.getMinutes(),
+    var s: d.getSeconds(),
     getLog() {
         return "[Log] " + "[" + h + ":" + m + ":" + s + "] ";
     }
@@ -40,11 +40,6 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
-
-        var d = new Date();
-        var h = d.getHours();
-        var m = d.getMinutes();
-        var s = d.getSeconds();
 
         if (newCommand === "g") {
             message.reply(log.getLog());
