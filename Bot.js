@@ -3,25 +3,19 @@ const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
-const log = {
-    var d: Date(),
-    var h: d.getHours(),
-    var m: d.getMinutes(),
-    var s: d.getSeconds(),
-    getLog() {
-        return "[Log] " + "[" + h + ":" + m + ":" + s + "] ";
-    }
-};
-
-
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
 
+function getLogText() {
+    let d = Date();
+    logMessage = "[Log] [" + d.getHours + ":" + d.getMinutes + ":" + d.getSeconds + "] ";
+    return logMessage;
+}
 
 client.on("ready", () => {
-    console.log("[Log] Bot Working :D");
+    console.log(getLogText() + "Bot Working :D");
 
-    client.channels.get("503586373744459818").send("Bot Working :D");
+    client.channels.get("503586373744459818").send(getLogText() + "Bot Working :D");
 
     client.user.setActivity("Developed By lsoavneduy :3");
 });
@@ -33,17 +27,20 @@ client.on("message", (message) => {
     newCommand = command.toLowerCase();
     let args = message.content.split(" ").slice(1);
 
-    var output = null;
-    var a = 0;
-    var b = 0;
-
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
 
-        if (newCommand === "g") {
-            message.reply(log.getLog());
-        }
+        let output = null;
+        let a = 0;
+        let b = 0;
+
+        /*
+        let d = new Date();
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        */
 
         if (newCommand === "help") {
             console.log("[Log] [Help] By " + message.author.username.toString());
