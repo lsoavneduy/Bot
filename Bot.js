@@ -3,6 +3,11 @@ const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
+var d = new Date();
+var h = d.getHours();
+var m = d.getMinutes();
+var s = d.getSeconds();
+
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
 
@@ -29,6 +34,10 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     if (message.content.startsWith(prefix)) {
+
+        if (newCommand === "g") {
+            message.reply(h + ":" + m + ":" + s);
+        }
 
         if (newCommand === "help") {
             console.log("[Log] [Help] By " + message.author.username.toString());
@@ -215,6 +224,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     let newMemberChannel = newMember.voiceChannel;
     let oldMemberChannel = oldMember.voiceChannel;
 
+
     if (oldMemberChannel === undefined && newMemberChannel !== undefined) {
         console.log("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
         client.channels.get("503586373744459818").send("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
@@ -233,6 +243,10 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 client.login(token);
+
+
+
+
 
 {
     //    if (message.content.startsWith(prefix + "JJ")) {
