@@ -3,10 +3,16 @@ const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
 
-var d = new Date();
-var h = d.getHours();
-var m = d.getMinutes();
-var s = d.getSeconds();
+const log = {
+    d: Date(),
+    h: d.getHours(),
+    m: d.getMinutes(),
+    s: d.getSeconds(),
+    getLog() {
+        return "[Log] " + "[" + h + ":" + m + ":" + s + "] ";
+    }
+};
+
 
 //const fs = require("fs");
 //client.msgs = require("./msgs.json");
@@ -35,8 +41,13 @@ client.on("message", (message) => {
 
     if (message.content.startsWith(prefix)) {
 
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
+
         if (newCommand === "g") {
-            message.reply(h + ":" + m + ":" + s);
+            message.reply(log.getLog());
         }
 
         if (newCommand === "help") {
