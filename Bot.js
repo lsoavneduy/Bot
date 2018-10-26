@@ -35,28 +35,21 @@ client.on("message", (message) => {
         let a = 0;
         let b = 0;
 
-        /*
-        let d = new Date();
-        let h = d.getHours();
-        let m = d.getMinutes();
-        let s = d.getSeconds();
-        */
-
         if (newCommand === "help") {
-            console.log("[Log] [Help] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [Help] By " + message.author.username.toString());
+            console.log(getLogText() + "[Help] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[Help] By " + message.author.username.toString());
             message.reply("Here Are The Command :3 \n !CNMB->Help \n !CNMB->Hello \n !CNMB->Rubbish @Username \n !CNMB->PromoteExtra @Username \n !CNMB->PromoteMember @Username \n !CNMB->RollEgg \n !CNMB->RollEgg10 \n !CNMB->RollEgg100 \n !CNMB->RollEgg1000");
         }
 
         if (newCommand === "hello") {
-            console.log("[Log] [Hello] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [Hello] By " + message.author.username.toString());
+            console.log(getLogText() + "[Hello] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[Hello] By " + message.author.username.toString());
             message.reply("Hello :3");
         }
 
         if (newCommand === "rubbish") {
-            console.log("[Log] [Rubbish] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [Rubbish] By " + message.author.username.toString());
+            console.log(getLogText() + "[Rubbish] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] By " + message.author.username.toString());
             let target = message.guild.member(message.mentions.users.first());
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
@@ -68,8 +61,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promoteextra") {
-            console.log("[Log] [PromoteExtra] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [PromoteExtra] By " + message.author.username.toString());
+            console.log(getLogText() + "[PromoteExtra] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] By " + message.author.username.toString());
             let role = message.guild.roles.find(role=> role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
             target.addRole(role).then(member => {
@@ -78,8 +71,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promotemember") {
-            console.log("[Log] [PromoteMember] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [PromoteMember] By " + message.author.username.toString());
+            console.log(getLogText() + "[PromoteMember] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteMember] By " + message.author.username.toString());
             if (message.member.roles.find('id', '485478723840245761')) {
                 let role = message.guild.roles.find(role=> role.id === '485477125042864138');
                 let target = message.guild.member(message.mentions.users.first());
@@ -93,8 +86,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg") {
-            console.log("[Log] [RollEgg] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [RollEgg] By " + message.author.username.toString());
+            console.log(getLogText() + "[RollEgg] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[RollEgg] By " + message.author.username.toString());
             let number = Math.floor(Math.random() * 99) + 1;
             if (number > 0 && number <= 94) {
                 message.reply("R :3");
@@ -111,8 +104,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg10") {
-            console.log("[Log] [RollEgg10] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [RollEgg10] By " + message.author.username.toString());
+            console.log(getLogText() + "[RollEgg10] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[RollEgg10] By " + message.author.username.toString());
             for (a = 0; a < 10; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -144,8 +137,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg100") {
-            console.log("[Log] [RollEgg100] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [RollEgg100] By " + message.author.username.toString());
+            console.log(getLogText() + "[RollEgg100] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[RollEgg100] By " + message.author.username.toString());
             for (a = 0; a < 100; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90) {
@@ -177,8 +170,8 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rollegg1000") {
-            console.log("[Log] [RollEgg1000] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send("[Log] [RollEgg1000] By " + message.author.username.toString());
+            console.log(getLogText() + "[RollEgg1000] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[RollEgg1000] By " + message.author.username.toString());
             for (b = 0; b < 4; b++) {
                 for (a = 0; a < 250; a++) {
                     let number = Math.floor(Math.random() * 99) + 1;
@@ -216,8 +209,8 @@ client.on("message", (message) => {
 });
 
 client.on('guildMemberAdd', member => {
-    console.log("[Log] [JoinServer] By " + member.toString());
-    client.channels.get("503586373744459818").send("[Log] [JoinServer] By " + member.toString());
+    console.log(getLogText() + "[JoinServer] By " + member.toString());
+    client.channels.get("503586373744459818").send(getLogText() + "[JoinServer] By " + member.toString());
     client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
     client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->GetExtra) To Get Your First Permission In This Channel After 10mins :3");
 });
@@ -229,19 +222,19 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
 
     if (oldMemberChannel === undefined && newMemberChannel !== undefined) {
-        console.log("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
-        client.channels.get("503586373744459818").send("[Log] [JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        console.log(getLogText() + "[JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
+        client.channels.get("503586373744459818").send(getLogText() + "[JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(newMember.user.username + " Joined Voice Channel [ " + newMemberChannel.name + " ] :3");
     }
     else if (oldMemberChannel !== undefined && newMemberChannel === undefined) {
-        console.log("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
-        client.channels.get("503586373744459818").send("[Log] [LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
+        console.log(getLogText() + "[LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
+        client.channels.get("503586373744459818").send(getLogText() + "[LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(newMember.user.username + " Leave Voice Channel [ " + oldMemberChannel.name + " ] :3");
     }
     else if (oldMemberChannel !== newMemberChannel) {
-        console.log("[Log] [SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
-        client.channels.get("503586373744459818").send("[Log] [SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
-        client.channels.get("504358200406048769").send(newMember.user.username + " Switch Voice Channel From [ " + oldMemberChannel.name + " ] To [ " + newMemberChannel.name + " ] :3");
+        console.log(getLogText() + "[SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
+        client.channels.get("503586373744459818").send(getLogText() + "[SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
+        client.channels.get("504358200406048769").send(getLogText() + newMember.user.username + " Switch Voice Channel From [ " + oldMemberChannel.name + " ] To [ " + newMemberChannel.name + " ] :3");
     }
 });
 
