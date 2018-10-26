@@ -50,7 +50,7 @@ client.on("message", (message) => {
         if (newCommand === "rubbish") {
             let target = message.guild.member(message.mentions.users.first());
             console.log(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
-            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] [" s+ message.author.username.toString() + "] [" + target.username.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
             if (target.id === '150959015197802505')
