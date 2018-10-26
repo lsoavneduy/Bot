@@ -212,7 +212,7 @@ client.on('guildMemberAdd', member => {
     console.log(getLogText() + "[JoinServer] By " + member.toString());
     client.channels.get("503586373744459818").send(getLogText() + "[JoinServer] By " + member.toString());
     client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
-    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->GetExtra) To Get Your First Permission In This Channel After 10mins :3");
+    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->PromoteExtra) To Get Your First Permission In This Channel After 10mins :3");
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
