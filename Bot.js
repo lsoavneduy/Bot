@@ -48,9 +48,9 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rubbish") {
-            console.log(getLogText() + "[Rubbish] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] By " + message.author.username.toString());
             let target = message.guild.member(message.mentions.users.first());
+            console.log(getLogText() + "[Rubbish] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] [" s+ message.author.username.toString() + "] [" + target.username.toString() + "]");
             if (target.id === '206003875092627456')
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
             if (target.id === '150959015197802505')
@@ -61,21 +61,30 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "promoteextra") {
-            console.log(getLogText() + "[PromoteExtra] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] By " + message.author.username.toString());
-            let role = message.guild.roles.find(role=> role.id === '485478021327880232');
+            let role = message.guild.roles.find(role => role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
-            target.addRole(role).then(member => {
-                message.reply("Done :3").catch(console.error);
-            });
+            console.log(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+
+            if (message.member.roles.find('id', '485478723840245761')) {
+                target.addRole(role).then(member => {
+                    message.reply("Done :3").catch(console.error);
+                });
+            }
+            else {
+                message.author.addRole(role).then(member => {
+                    message.reply("Done :3").catch(console.error);
+                });
+            }
         }
 
         if (newCommand === "promotemember") {
-            console.log(getLogText() + "[PromoteMember] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send(getLogText() + "[PromoteMember] By " + message.author.username.toString());
+            let role = message.guild.roles.find(role => role.id === '485477125042864138');
+            let target = message.guild.member(message.mentions.users.first());
+            console.log(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+
             if (message.member.roles.find('id', '485478723840245761')) {
-                let role = message.guild.roles.find(role=> role.id === '485477125042864138');
-                let target = message.guild.member(message.mentions.users.first());
                 target.addRole(role).then(member => {
                     message.reply("Done :3").catch(console.error);
                 });
@@ -212,7 +221,7 @@ client.on('guildMemberAdd', member => {
     console.log(getLogText() + "[JoinServer] By " + member.toString());
     client.channels.get("503586373744459818").send(getLogText() + "[JoinServer] By " + member.toString());
     client.channels.get("496640081331748864").send("Welcome" + member.toString() + "To This Discord Server :3");
-    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter (!CNMB->PromoteExtra) To Get Your First Permission In This Channel After 10mins :3");
+    client.channels.get("496671228023537674").send(member.toString() + "You Can Enter !CNMB->PromoteExtra @Username To Get Your First Permission In This Channel After 10mins :3");
 });
 
 client.on('voiceStateUpdate', (oldMember, newMember) => {
