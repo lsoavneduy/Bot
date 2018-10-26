@@ -7,7 +7,7 @@ const prefix = process.env.PREFIX;
 //client.msgs = require("./msgs.json");
 
 function getLogText() {
-    let d = Date();
+    let d = new Date();
     logMessage = "[Log] [" + d.getHours + ":" + d.getMinutes + ":" + d.getSeconds + "] ";
     return logMessage;
 }
