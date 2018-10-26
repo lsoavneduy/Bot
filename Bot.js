@@ -63,8 +63,8 @@ client.on("message", (message) => {
         if (newCommand === "promoteextra") {
             let role = message.guild.roles.find(role => role.id === '485478021327880232');
             let target = message.guild.member(message.mentions.users.first());
-            console.log(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
-            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            console.log(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteExtra] [" + message.author.username.toString() + "] [" + target.toString() + "]");
 
             if (message.member.roles.find('id', '485478723840245761')) {
                 target.addRole(role).then(member => {
@@ -81,8 +81,8 @@ client.on("message", (message) => {
         if (newCommand === "promotemember") {
             let role = message.guild.roles.find(role => role.id === '485477125042864138');
             let target = message.guild.member(message.mentions.users.first());
-            console.log(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
-            client.channels.get("503586373744459818").send(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.username.toString() + "]");
+            console.log(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.toString() + "]");
+            client.channels.get("503586373744459818").send(getLogText() + "[PromoteMember] [" + message.author.username.toString() + "] [" + target.toString() + "]");
 
             if (message.member.roles.find('id', '485478723840245761')) {
                 target.addRole(role).then(member => {
