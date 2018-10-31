@@ -8,6 +8,8 @@ const prefix = process.env.PREFIX;
 
 function getLogText() {
     let d = new Date();
+    if (d.getHours() === '24')
+       d.setHours(0);
     logMessage = "[" + (d.getHours() + 8) + ":" + d.getMinutes() + ":" + d.getSeconds() + "] [Log] ";
     return logMessage;
 }
