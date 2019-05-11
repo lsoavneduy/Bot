@@ -220,15 +220,15 @@ client.on("message", (message) => {
             let ERR = 0, R = 0, SR = 0, SSR = 0, UR = 0;
             for (a = 0; a < input1; a++) {
                 let number = Math.floor(Math.random() * 999) + 1;
-                if (number > 0 && number <= 899)
+                if (number > 0 && number <= 898)
                     R++;
-                if (number > 899 && number <= 989)//10%
+                if (number > 898 && number <= 988)//10%
                     SR++;
-                if (number > 989 && number <= 999)//1%
+                if (number > 988 && number <= 998)//1%
                     SSR++;
-                if (number > 999 && number <= 1000)//0.001%
+                if (number > 998 && number <= 999)//0.001%
                     UR++;
-                if (number <= 0)
+                if (number <= 0 || number > 999)
                     ERR++;
             }
             output = "ERR:" + ERR + ", R:" + R + ", SR:" + SR + ", SSR:" + SSR + ", UR:" + UR;
