@@ -217,7 +217,7 @@ client.on("message", (message) => {
         if (newCommand === "newrollegg" && input1 <= 10000) {
             console.log(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
             client.channels.get("503586373744459818").send(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
-            let R = 0, SR = 0, SSR = 0, UR = 0;
+            let ERR = 0, R = 0, SR = 0, SSR = 0, UR = 0;
             for (a = 0; a < input1; a++) {
                 let number = Math.floor(Math.random() * 999) + 1;
                 if (number > 0 && number <= 899)
@@ -228,8 +228,10 @@ client.on("message", (message) => {
                     SSR++;
                 if (number > 999 && number <= 1000)//0.001%
                     UR++;
+                if (number <= 0)
+                    ERR++;
             }
-            output = "R:" + R + ", SR:" + SR + ", SSR:" + SSR + ", UR:" + UR;
+            output = "ERR:" + ERR + ", R:" + R + ", SR:" + SR + ", SSR:" + SSR + ", UR:" + UR;
             message.reply(output);
             output = null;
         }
