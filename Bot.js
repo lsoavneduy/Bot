@@ -210,7 +210,7 @@ client.on("message", (message) => {
         if (newCommand === "newrollegg100") {
             console.log(getLogText() + "[NewRollEgg1000] By " + message.author.username.toString());
             client.channels.get("503586373744459818").send(getLogText() + "[NewRollEgg1000] By " + message.author.username.toString());
-            int R = 0, SR = 0, SSR = 0, UR = 0;
+            let R = 0, SR = 0, SSR = 0, UR = 0;
             for (a = 0; a < 100; a++) {
                 let number = Math.floor(Math.random() * 99) + 1;
                 if (number > 0 && number <= 90)
