@@ -214,19 +214,19 @@ client.on("message", (message) => {
             }
         }
         
-        if (newCommand === "newrollegg100") {
-            console.log(getLogText() + "[NewRollEgg100] By " + message.author.username.toString());
-            client.channels.get("503586373744459818").send(getLogText() + "[NewRollEgg100] By " + message.author.username.toString());
+        if (newCommand === "newrollegg" && input1 <= 10000) {
+            console.log(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
             let R = 0, SR = 0, SSR = 0, UR = 0;
-            for (a = 0; a < 100; a++) {
-                let number = Math.floor(Math.random() * 99) + 1;
-                if (number > 0 && number <= 90)
+            for (a = 0; a < input1; a++) {
+                let number = Math.floor(Math.random() * 999) + 1;
+                if (number > 0 && number <= 899)
                     R++;
-                if (number > 90 && number <= 95)
+                if (number > 899 && number <= 989)//10%
                     SR++;
-                if (number > 95 && number <= 98)
+                if (number > 989 && number <= 999)//1%
                     SSR++;
-                if (number > 98 && number <= 100)
+                if (number > 999 && number <= 1000)//0.001%
                     UR++;
             }
             output = "R:" + R + ", SR:" + SR + ", SSR:" + SSR + ", UR:" + UR;
