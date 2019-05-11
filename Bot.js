@@ -214,7 +214,7 @@ client.on("message", (message) => {
             }
         }
         
-        if (newCommand === "newrollegg" && input1 <= 10000) {
+        if (newCommand === "newrollegg" && input1 <= 100000) {
             console.log(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
             client.channels.get("503586373744459818").send(getLogText() + "[NewRollEgg] By " + message.author.username.toString());
             let ERR = 0, R = 0, SR = 0, SSR = 0, UR = 0;
