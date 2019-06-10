@@ -7,11 +7,7 @@ const prefix = process.env.PREFIX;
 //client.msgs = require("./msgs.json");
 
 function checkIgnore(temp) {
-    if (temp === '506453997071106049' || temp === '581494291239534601' || temp === '578581402006585384' || temp === '581491908379934731' || temp === '586946271063834624')
-        return false;
-    else 
-        return true;
-    if (temp === '206003875092627456' || temp === '554621356679888897')
+    if (temp === '506453997071106049' || temp === '581494291239534601' || temp === '578581402006585384' || temp === '581491908379934731' || temp === '586946271063834624' /**/ || temp === '206003875092627456' || temp === '554621356679888897')
         return false;
     else 
         return true;
