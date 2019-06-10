@@ -64,16 +64,18 @@ client.on("message", (message) => {
         }
 
         if (newCommand === "rubbish") {
+            let output = false;
             console.log(getLogText() + "[Rubbish] By " + message.author.username.toString());
             client.channels.get("503586373744459818").send(getLogText() + "[Rubbish] By " + message.author.username.toString());
             let target = message.guild.member(message.mentions.users.first());
-            if (target.id === '206003875092627456')
+            if (target.id === '206003875092627456' && output === false) {
                 message.channel.send("No! I disagree with you. " + target + " is a Handsome People :3");
-            if (target.id === '150959015197802505')
+            }
+            if (target.id === '150959015197802505' && output === false) {
                 message.channel.send("No! I disagree with you. " + target + " is very Cute :3");
-            else 
+            }
+            if (output === false)
                 message.channel.send("Yeah! I agree with you. " + target + " is a Rubbish :3");
-
         }
 
         if (newCommand === "promoteextra") {
