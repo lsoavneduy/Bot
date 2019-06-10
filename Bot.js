@@ -11,6 +11,10 @@ function checkIgnore(temp) {
         return false;
     else 
         return true;
+    if (temp === '206003875092627456' || temp === '554621356679888897')
+        return false;
+    else 
+        return true;
 }
 
 function getLogText() {
@@ -262,17 +266,17 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     let oldMemberChannel = oldMember.voiceChannel;
 
 
-    if (oldMemberChannel === undefined && newMemberChannel !== undefined && checkIgnore(newMemberChannel.id)) {
+    if (oldMemberChannel === undefined && newMemberChannel !== undefined && checkIgnore(newMemberChannel.id) && checkIgnore(oldMember) && checkIgnore(newMember)) {
         console.log(getLogText() + "[JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
         client.channels.get("503586373744459818").send(getLogText() + "[JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(getLogText() + newMember.user.username + " Joined Voice Channel [ " + newMemberChannel.name + " ] :3");
     }
-    else if (oldMemberChannel !== undefined && newMemberChannel === undefined && checkIgnore(oldMemberChannel.id)) {
+    else if (oldMemberChannel !== undefined && newMemberChannel === undefined && checkIgnore(oldMemberChannel.id) && checkIgnore(oldMember) && checkIgnore(newMember)) {
         console.log(getLogText() + "[LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("503586373744459818").send(getLogText() + "[LeaveVoiceChannel] [" + newMember.user.username + "] " + "[" + oldMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(getLogText() + newMember.user.username + " Leave Voice Channel [ " + oldMemberChannel.name + " ] :3");
     }
-    else if (oldMemberChannel !== newMemberChannel && checkIgnore(oldMemberChannel.id) && checkIgnore(newMemberChannel.id)) {
+    else if (oldMemberChannel !== newMemberChannel && checkIgnore(oldMemberChannel.id) && checkIgnore(newMemberChannel.id) && checkIgnore(oldMember) && checkIgnore(newMember)) {
         console.log(getLogText() + "[SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
         client.channels.get("503586373744459818").send(getLogText() + "[SwitchVoiceChannel] [" + newMember.user.username + "] [" + oldMemberChannel.name + "] [" + newMemberChannel.name + "]");
         client.channels.get("504358200406048769").send(getLogText() + newMember.user.username + " Switch Voice Channel From [ " + oldMemberChannel.name + " ] To [ " + newMemberChannel.name + " ] :3");
