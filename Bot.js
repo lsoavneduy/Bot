@@ -40,7 +40,12 @@ client.on("message", (message) => {
     if (message.author.bot) return;
     
     if (!(message.author.bot)) {
-        client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content);
+        if (message.embeds === null) {
+            client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content);
+        }
+        else {
+            client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content + "\n" + message.embeds.image);
+        }
     }
 
     if (message.content.startsWith(prefix)) {
