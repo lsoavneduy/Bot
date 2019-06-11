@@ -44,7 +44,7 @@ client.on("message", (message) => {
             client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content);
         }
         else {
-            client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content + "\n" + message.embeds.image);
+            client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + "\n" + message.content + "\n" + message.embeds.image.url);
         }
     }
 
