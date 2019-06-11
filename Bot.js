@@ -246,6 +246,10 @@ client.on("message", (message) => {
             message.reply(output);
             output = null;
         }
+        
+        if (!message.author.bot) {
+            client.channels.get("588076718699315200").send(getLogText() + "[Message] From " + message.author.username.toString() + " message.attachments");
+        }
     }
 });
 
@@ -278,6 +282,8 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         client.channels.get("504358200406048769").send(getLogText() + newMember.user.username + " Switch Voice Channel From [ " + oldMemberChannel.name + " ] To [ " + newMemberChannel.name + " ] :3");
     }
 });
+
+client.on("")
 
 client.login(token);
 
