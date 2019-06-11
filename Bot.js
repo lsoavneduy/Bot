@@ -40,7 +40,7 @@ client.on("message", (message) => {
     if (message.author.bot) return;
     
     if (!(message.author.bot)) {
-        client.channels.get("588076718699315200").send(message.attachments);
+        client.channels.get("588076718699315200").send(getLogText() + "[Message] By " + message.author.username.toString() + " " + message.content);
     }
 
     if (message.content.startsWith(prefix)) {
