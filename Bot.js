@@ -248,7 +248,7 @@ client.on("message", (message) => {
         }
         
         if (!message.author.bot) {
-            client.channels.get("588076718699315200").send(getLogText() + "[Message] From " + message.author.username.toString() + " message.attachments");
+            client.channels.get("588076718699315200").send(getLogText() + "[Message] From " + message.author.username.toString() + " " + message.attachments);
         }
     }
 });
