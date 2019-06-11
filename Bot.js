@@ -38,6 +38,10 @@ client.on("message", (message) => {
     let args = message.content.split(" ").slice(1);
 
     if (message.author.bot) return;
+    
+    if (!(message.author.bot)) {
+        client.channels.get("588076718699315200").send(message.attachments);
+    }
 
     if (message.content.startsWith(prefix)) {
 
