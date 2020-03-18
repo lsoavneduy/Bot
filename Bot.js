@@ -1,4 +1,5 @@
 const discord = require('discord.js');
+const ytdl = require('ytdl-core');
 const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
@@ -15,9 +16,10 @@ function checkIgnore(temp) {
 
 function getLogText() {
     let d = new Date();
-    if (d.getHours() === '24')
-       d.setHours(0);
-    logMessage = "[" + (d.getHours() + 8) + ":" + d.getMinutes() + ":" + d.getSeconds() + "] [Log] ";
+    let hour = d.getHours() + 8;
+    if (hour >= '24')
+       hour -= 24;
+    logMessage = "[" + hour + ":" + d.getMinutes() + ":" + d.getSeconds() + "] [Log] ";
     return logMessage;
 }
 
@@ -107,6 +109,14 @@ client.on("message", (message) => {
             else {
                 message.reply("You Don't Have Permission To Do That :3").catch(console.error);
             }
+        }
+        
+        if (newCommand === "pekopeko") {
+            console.log(getLogText() + "[PekoPeko] By " + message.author.username.toString());
+            client.channels.get("503586373744459818").send(getLogText() + "[PekoPeko] By " + message.author.username.toString());
+            message.member.voice.voiceChannel.join()
+              .then(connection => client.channels.get("503586373744459818").send(getLogText() + "Connected!!")
+              .catch(client.channels.get("503586373744459818").send(getLogText() + console.error);
         }
 
         if (newCommand === "rollegg") {
