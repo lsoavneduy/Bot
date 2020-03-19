@@ -114,9 +114,9 @@ client.on("message", (message) => {
         if (newCommand === "pekopeko") {
             console.log(getLogText() + "[PekoPeko] By " + message.author.username.toString());
             client.channels.get("503586373744459818").send(getLogText() + "[PekoPeko] By " + message.author.username.toString());
-            message.member.voice.voiceChannel.join()
-              .then(connection => client.channels.get("503586373744459818").send(getLogText() + "Connected!!")
-              .catch(console.error);
+            message.member.voice.voiceChannel.join().then(connection => {
+                client.channels.get("503586373744459818").send(getLogText() + "Connected!!").catch(console.error);
+            });
         }
 
         if (newCommand === "rollegg") {
