@@ -116,7 +116,7 @@ client.on("message", (message) => {
             client.channels.get("503586373744459818").send(getLogText() + "[PekoPeko] By " + message.author.username.toString());
             message.member.voice.voiceChannel.join()
               .then(connection => client.channels.get("503586373744459818").send(getLogText() + "Connected!!")
-              .catch(client.channels.get("503586373744459818").send(getLogText() + console.error);
+              .catch(console.error);
         }
 
         if (newCommand === "rollegg") {
