@@ -1,5 +1,4 @@
 const discord = require('discord.js');
-const ytdl = require('ytdl-core');
 const client = new discord.Client();
 const token = process.env.TOKEN;
 const prefix = process.env.PREFIX;
