@@ -269,12 +269,10 @@ client.on('guildMemberAdd', member => {
     client.channels.get("496671228023537674").send(member.toString() + "You Can Enter !CNMB->PromoteExtra @Username To Get Your First Permission In This Channel After 10mins :3");
 });
 
-client.on('voiceStateUpdate', (old, new) => {
-    
-    let newMemberChannel = new.channel;
-    let oldMemberChannel = old.channel;
-    let newMember = new.member;
-    let oldMember = old.member;
+client.on('voiceStateUpdate', (oldMember, newMember) => {
+
+    let newMemberChannel = newMember.voiceChannel;
+    let oldMemberChannel = oldMember.voiceChannel;
 
     if (oldMemberChannel === undefined && newMemberChannel !== undefined && checkIgnore(newMemberChannel.id) && checkIgnore(oldMember.user.id) && checkIgnore(newMember.user.id)) {
         console.log(getLogText() + "[JoinVoiceChannel] [" + newMember.user.username + "] " + "[" + newMemberChannel.name + "]");
